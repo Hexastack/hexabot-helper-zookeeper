@@ -1,7 +1,7 @@
 {
   "name": "hexabot-plugin-zookeeper",
   "version": "2.0.0",
-  "description": "The Zookeeper Plugin Extension is for master election",
+  "description": "The Zookeeper Plugin Extension enabling coordination and configuration management in distributed systems.",
   "author": "Hexastack",
   "license": "proprietary"
 }
