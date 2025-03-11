@@ -18,7 +18,7 @@ ZOOKEEPER_SERVERS="server.1=zoo1:2888:3888;2181"
 
 ## Settings Configuration
 
-To configure the MINIO Helper, use the following settings in the Hexabot admin panel under **Settings > Minio**:
+To configure the Zookeeper Helper, use the following settings in the Hexabot admin panel under **Settings > Zookeeper**:
 
 | **Label**     | **Default Value**       | **Type**      | **Description**                                 |
 |---------------|-------------------------|---------------|-------------------------------------------------|
@@ -39,14 +39,12 @@ npm install hexabot-helper-zookeeper
 ```
 
 Then follow these steps:
-1. Add the `docker-compose.zookeeper.yml` and `docker-compose.minio.dev.yml` files under the `docker/` folder.
+1. Add the `docker-compose.zookeeper.yml` and `docker-compose.replicas.dev.yml` files under the `docker/` folder.
 2. Create three copies of the api/ folder
 ```sh
 cp -r api api_s1_n1 && cp -r api api_s1_n2 && cp -r api api_s1_n3 
 ```
 3. Start the Zookeeper and replicas services with the following command: `hexabot dev --services zookeeper,replicas`
-4. Navigate to Settings > Zookeeper in the admin panel and update the settings.
-5. Set the default storage helper: Navigate to Settings > Chatbot and update the Default Storage Helper to use minio-helper.
 
 ## Docker compose files
 
