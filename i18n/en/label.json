@@ -1,0 +1,8 @@
+{
+  "zookeeper_helper": "Zookeeper",
+  "endpoint": "Zookeeper Server Hostname",
+  "port": "Port",
+  "timeout": "Heartbeat waiting time",
+  "path": "Path",
+  "isHostOrderDeterministic": "Deterministic Host Order"
+}

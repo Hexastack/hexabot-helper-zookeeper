@@ -1,0 +1,8 @@
+{
+  "zookeeper_helper": "Zookeeper",
+  "endpoint": "Nom de domain du Server Zookeeper",
+  "port": "Port",
+  "timeout": "Temps d'attente pour le signal de disponibilité",
+  "path": "Chemin",
+  "isHostOrderDeterministic": "Deterministic Host Order"
+}
