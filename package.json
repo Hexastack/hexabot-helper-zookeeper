@@ -1,7 +1,7 @@
 {
   "name": "hexabot-plugin-zookeeper",
-  "version": "2.0.0",
-  "description": "The Zookeeper Plugin Extension enabling coordination and configuration management in distributed systems.",
+  "version": "2.2.2",
+  "description": "The Zookeeper Plugin Extension enabling leader election.",
   "author": "Hexastack",
-  "license": "proprietary"
+  "license": "AGPL-3.0-only"
 }
