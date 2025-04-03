@@ -1,14 +1,17 @@
 ## Hexabot ZooKeeper Helper
+
 Hexabot ZooKeeper Helper is an extension that integrates ZooKeeper for managing configurations and coordinating distributed systems in your Hexabot project. This helper allows you to interact with ZooKeeper to store, retrieve, and manage configuration data efficiently.
 
 Hexabot is an open-source chatbot/agent solution that allows users to create and manage AI-powered, multi-channel, and multilingual chatbots. For more information, visit the official GitHub repository.
 
 ## Features
+
 - Distributed Coordination: Helps manage distributed systems by coordinating and synchronizing processes across machines.
 
 - Leader Election: Facilitates leader election for distributed systems, ensuring one active leader for task coordination.
 
 ## Environment Setup
+
 Set your environment variables in the ./docker/.env file. These variables will be used by Docker Compose to set up the ZooKeeper connection. Example variables:
 
 ```
@@ -20,17 +23,26 @@ ZOOKEEPER_SERVERS="server.1=zoo1:2888:3888;2181"
 
 To configure the Zookeeper Helper, use the following settings in the Hexabot admin panel under **Settings > Zookeeper**:
 
-| **Label**     | **Default Value**       | **Type**      | **Description**                                 |
-|---------------|-------------------------|---------------|-------------------------------------------------|
-| `endpoint`    | `zoo1` (default)                | Text          | The endpoint for the Zookeeper server.             |
-| `port`        | `2181` (default)                 | Number          | The port for the Zookeeper server.                 |
-| `timeout`      | `5000` (default)    | Number          | The Heartbeat waiting time in ms.    |
-| `path`      | `master` (default)    | Text          | The path is like an address that helps locate a specific piece of data (called also znode).    |
-| `isHostOrderDeterministic`      | `false` (default)    | Checkbox          | Deterministic Host Order.    |
+| **Label**                  | **Default Value**  | **Type** | **Description**                                                                             |
+| -------------------------- | ------------------ | -------- | ------------------------------------------------------------------------------------------- |
+| `endpoint`                 | `zoo1` (default)   | Text     | The endpoint for the Zookeeper server.                                                      |
+| `port`                     | `2181` (default)   | Number   | The port for the Zookeeper server.                                                          |
+| `timeout`                  | `5000` (default)   | Number   | The Heartbeat waiting time in ms.                                                           |
+| `path`                     | `master` (default) | Text     | The path is like an address that helps locate a specific piece of data (called also znode). |
+| `isHostOrderDeterministic` | `false` (default)  | Checkbox | Deterministic Host Order.                                                                   |
 
+## Important: Dockerfile Requirement
 
+To ensure ZooKeeper works properly in the API containers, add the following line in the API Dockerfile:
+
+```dockerfile
+RUN apk add --no-cache python3 py3-pip build-base
+```
+
+This ensures that the necessary dependencies are available for ZooKeeper to function correctly.|
 
 ## Installation
+
 First, navigate to your Hexabot project directory and make sure the dependencies are installed:
 
 ```sh
@@ -39,11 +51,14 @@ npm install hexabot-helper-zookeeper
 ```
 
 Then follow these steps:
+
 1. Add the `docker-compose.zookeeper.yml` and `docker-compose.replicas.dev.yml` files under the `docker/` folder.
 2. Create three copies of the api/ folder
+
 ```sh
-cp -r api api_s1_n1 && cp -r api api_s1_n2 && cp -r api api_s1_n3 
+cp -r api api_s1_n1 && cp -r api api_s1_n2 && cp -r api api_s1_n3
 ```
+
 3. Start the Zookeeper and replicas services with the following command: `hexabot dev --services zookeeper,replicas`
 
 ## Docker compose files
@@ -156,8 +171,8 @@ networks:
 
 ```
 
-
 ## Support
+
 If you encounter any issues or have questions about using Hexabot Zookeeper Helper, feel free to contribute or open an issue on the Hexabot GitHub repository.
 
 Feel free to join us on [Discord](https://discord.gg/rNb9t2MFkG)
