@@ -28,7 +28,7 @@ export default [
     config: {
       min: 1,
       max: 65535,
-      step: '1',
+      step: 1,
     },
   },
   {
@@ -39,7 +39,7 @@ export default [
     config: {
       min: 0,
       max: 1000 * 60 * 5,
-      step: '1',
+      step: 1,
     },
   },
   {
