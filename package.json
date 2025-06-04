@@ -1,5 +1,5 @@
 {
-  "name": "hexabot-plugin-zookeeper",
+  "name": "hexabot-helper-zookeeper",
   "version": "2.2.2",
   "description": "The Zookeeper Plugin Extension enabling leader election.",
   "scripts": {
